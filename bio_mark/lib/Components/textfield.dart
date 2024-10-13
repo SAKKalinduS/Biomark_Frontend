@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:bio_mark/Components/colors.dart';
 
-class InputField extends StatelessWidget {
+class InputField extends StatelessWidget 
+{
   final String hint;
   final IconData icon;
   final bool passwordInvisible;
@@ -15,17 +16,18 @@ class InputField extends StatelessWidget {
     this.passwordInvisible = false});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     Size size = MediaQuery.of(context).size;
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       margin: const EdgeInsets.symmetric(vertical: 6),
       width: size.width *.9,
-      height: 55,
+      height: 40,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(8)
+        borderRadius: BorderRadius.circular(4)
       ),
 
       child: Center(
