@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../services/auth_service.dart';
 
 class RecoveryScreen extends StatefulWidget {
+  const RecoveryScreen({super.key});
+
   @override
   _RecoveryScreenState createState() => _RecoveryScreenState();
 }
@@ -19,33 +21,33 @@ class _RecoveryScreenState extends State<RecoveryScreen> {
     final authService = Provider.of<AuthService>(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Account Recovery')),
+      appBar: AppBar(title: const Text('Account Recovery')),
       body: Form(
         key: _formKey,
         child: ListView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           children: [
             TextFormField(
-              decoration: InputDecoration(labelText: 'Full Name'),
+              decoration: const InputDecoration(labelText: 'Full Name'),
               onSaved: (value) => _fullName = value!,
               validator: (value) => value!.isEmpty ? 'Required' : null,
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Date of Birth'),
+              decoration: const InputDecoration(labelText: 'Date of Birth'),
               onSaved: (value) => _dateOfBirth = value!,
               validator: (value) => value!.isEmpty ? 'Required' : null,
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: "Mother's Maiden Name"),
+              decoration: const InputDecoration(labelText: "Mother's Maiden Name"),
               onSaved: (value) => _securityAnswer1 = value!,
               validator: (value) => value!.isEmpty ? 'Required' : null,
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: "Childhood Best Friend's Name"),
+              decoration: const InputDecoration(labelText: "Childhood Best Friend's Name"),
               onSaved: (value) => _securityAnswer2 = value!,
               validator: (value) => value!.isEmpty ? 'Required' : null,
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
@@ -60,12 +62,12 @@ class _RecoveryScreenState extends State<RecoveryScreen> {
                     Navigator.pushReplacementNamed(context, '/profile');
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Account recovery failed')),
+                      const SnackBar(content: Text('Account recovery failed')),
                     );
                   }
                 }
               },
-              child: Text('Recover Account'),
+              child: const Text('Recover Account'),
             ),
           ],
         ),

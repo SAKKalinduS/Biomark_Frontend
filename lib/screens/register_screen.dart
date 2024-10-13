@@ -4,6 +4,8 @@ import '../services/auth_service.dart';
 import '../models/user.dart';
 
 class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
+
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
 }
@@ -17,36 +19,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final authService = Provider.of<AuthService>(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Register')),
+      appBar: AppBar(title: const Text('Register')),
       body: Form(
         key: _formKey,
         child: ListView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           children: [
             TextFormField(
-              decoration: InputDecoration(labelText: 'Full Name'),
+              decoration: const InputDecoration(labelText: 'Full Name'),
               onSaved: (value) => _user.fullName = value!,
               validator: (value) => value!.isEmpty ? 'Required' : null,
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Email'),
               keyboardType: TextInputType.emailAddress,
               onSaved: (value) => _user.email = value!,
               validator: (value) => value!.isEmpty ? 'Required' : null,
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(labelText: 'Password'),
               obscureText: true,
               onSaved: (value) => _user.password = value!,
               validator: (value) => value!.length < 6 ? 'Too short' : null,
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Date of Birth'),
+              decoration: const InputDecoration(labelText: 'Date of Birth'),
               onSaved: (value) => _user.dateOfBirth = value!,
               validator: (value) => value!.isEmpty ? 'Required' : null,
             ),
             // Add other registration fields here
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             ElevatedButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
@@ -56,12 +58,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Navigator.pushReplacementNamed(context, '/profile');
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Registration failed')),
+                      const SnackBar(content: Text('Registration failed')),
                     );
                   }
                 }
               },
-              child: Text('Register'),
+              child: const Text('Register'),
             ),
           ],
         ),
