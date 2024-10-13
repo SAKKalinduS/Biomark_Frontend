@@ -14,12 +14,14 @@ void main() {
         ChangeNotifierProvider(create: (_) => AuthService()),
         ChangeNotifierProvider(create: (_) => DataService()),
       ],
-      child: BiomarkApp(),
+      child: const BiomarkApp(),
     ),
   );
 }
 
 class BiomarkApp extends StatelessWidget {
+  const BiomarkApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,10 +31,10 @@ class BiomarkApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreen(),
-        '/register': (context) => RegisterScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/recovery': (context) => RecoveryScreen(),
+        '/': (context) => const LoginScreen(),
+        '/register': (context) => const RegisterScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/recovery': (context) => const RecoveryScreen(),
       },
     );
   }

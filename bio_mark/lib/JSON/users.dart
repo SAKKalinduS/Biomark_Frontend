@@ -14,9 +14,8 @@ class Users
   final String? besty;
   final String? pet;
   final String? ownQuestion;
-
   final String? email;
-  final String password;
+  final String? password;
 
   Users({
     this.usrId,
@@ -27,7 +26,7 @@ class Users
     this.pet,
     this.ownQuestion,
     this.email,
-    required this.password,
+    required this.password
   });
 
   //These json value must be same as your column name in database that we have already defined
@@ -55,6 +54,6 @@ class Users
     "pet" :pet,
     "ownQuestion" :ownQuestion,
     "email": email,
-    "password": password,
+    "password": password
   };
 }
