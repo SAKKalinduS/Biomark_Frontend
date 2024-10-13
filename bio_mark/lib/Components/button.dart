@@ -3,13 +3,15 @@ import 'package:bio_mark/Components/colors.dart';
 
 //We are going to design our own button
 
-class Button extends StatelessWidget {
+class Button extends StatelessWidget 
+{
   final String label;
   final VoidCallback press;
   const Button({super.key, required this.label, required this.press});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     //Query width and height of device for being fit or responsive
     Size size = MediaQuery.of(context).size;
     return Container(
@@ -18,7 +20,7 @@ class Button extends StatelessWidget {
       height: 55,
       decoration: BoxDecoration(
         color: primaryColor,
-        borderRadius: BorderRadius.circular(8)
+        borderRadius: BorderRadius.circular(4)
       ),
 
       child: TextButton(
